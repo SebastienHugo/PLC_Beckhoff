@@ -24,9 +24,10 @@ IF iTestIndex = 0 THEN
 	GenAleatoire(iMinVal := 1, iMaxVal := 10, o_iResult => iTestIndex);
 ELSE
 	// Do nothing
+	xTest := FALSE;
 END_IF
 
-]]></ST>
+xTest := TRUE;]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="8" Count="1" />
@@ -40,9 +41,11 @@ END_IF
       <LineId Id="38" Count="0" />
       <LineId Id="27" Count="0" />
       <LineId Id="37" Count="0" />
-      <LineId Id="39" Count="1" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="40" Count="0" />
       <LineId Id="36" Count="0" />
-      <LineId Id="30" Count="0" />
+      <LineId Id="47" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
