@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <POU Name="MAIN" Id="{f37ab39a-ee64-4305-b14b-001de0837e2a}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	sMessage : STRING;
+	iTestIndex : INT;
+	GenAleatoire : Random;
+END_VAR;]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Premier test
+CASE iTestIndex OF 
+	1 : 
+		sMessage := 'Bonjour jojo !';
+	2 :
+		sMessage := 'Au revoir';
+	3 :
+		sMessage :='';
+END_CASE
+
+// Second Test
+GenAleatoire(iMinVal := 1, iMaxVal := 10, o_iResult => iTestIndex);
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="8" Count="1" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="16" Count="1" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="30" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

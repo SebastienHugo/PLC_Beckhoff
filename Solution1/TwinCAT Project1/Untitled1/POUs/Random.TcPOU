@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <POU Name="Random" Id="{7d49a695-f630-4a60-accd-411f2f197065}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Random
+VAR_INPUT
+	iMinVal	: INT;
+	iMaxVal	: INT;
+END_VAR
+VAR_OUTPUT
+	o_iResult : INT;
+END_VAR
+VAR
+	lrMidValue : LREAL;
+	iMidValue : INT;
+	drand		: drand;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[drand(Seed := 0,Num => lrMidValue);
+
+lrMidValue := lrMidValue * 10;
+iMidValue := LREAL_TO_INT(lrMidValue);
+
+IF iMidValue > iMinVal AND iMidValue < iMaxVal THEN
+	o_iResult := iMidValue;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="Random">
+      <LineId Id="9" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="21" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
