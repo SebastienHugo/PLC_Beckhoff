@@ -19,7 +19,12 @@ CASE iTestIndex OF
 END_CASE
 
 // Second Test
-GenAleatoire(iMinVal := 1, iMaxVal := 10, o_iResult => iTestIndex);
+IF iTestIndex = 0 THEN
+	GenAleatoire(iMinVal := 1, iMaxVal := 10, o_iResult => iTestIndex);
+ELSE
+	// Do nothing
+END_IF
+
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
@@ -31,7 +36,11 @@ GenAleatoire(iMinVal := 1, iMaxVal := 10, o_iResult => iTestIndex);
       <LineId Id="12" Count="0" />
       <LineId Id="26" Count="0" />
       <LineId Id="25" Count="0" />
+      <LineId Id="38" Count="0" />
       <LineId Id="27" Count="0" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="39" Count="1" />
+      <LineId Id="36" Count="0" />
       <LineId Id="30" Count="0" />
     </LineIds>
   </POU>
